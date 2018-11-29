@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# Welcome to Karthik's homepage
+Introduction:
+ I am a 2nd year computer science student at IIT Dharwad.
 
-You can use the [editor on GitHub](https://github.com/KarthikVV24-11-1999/KarthikVV24-11-1999.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## MY skills:
+*Web development
+  *HTML
+  *CSS
+  *Java Script
+  *PHP
+  *Sql
+*Python3
+*C++
+*Linux/Unix
+*Latex
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## My repository on Github:
+Currently I am working on a chess game, which will have following features-
 
-### Markdown
+1. computer vs player
+1. player vs player
+## My interest:
+* I love coding and solving new problems
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### You can follow me on:
+[Github](http://github.com/KarthikVV24-11-1999/)
 
-- Bulleted
-- List
+### Contact details:
+You can contact me via [email](170010016@iitdh.ac.in)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KarthikVV24-11-1999/KarthikVV24-11-1999.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Thankyou!
