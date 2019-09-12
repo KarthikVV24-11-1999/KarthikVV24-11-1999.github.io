@@ -25,7 +25,8 @@ Introduction:
 Currently I am working on a chess game, which will have following features-
 
 1. computer vs player
-1. player vs player
+2. player vs player
+
 ## My interest:
 * I love coding and solving new problems
 
