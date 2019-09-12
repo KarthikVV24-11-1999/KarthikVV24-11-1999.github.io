@@ -3,16 +3,23 @@ Introduction:
  I am a 2nd year computer science student at IIT Dharwad.
 
 ## MY skills:
+* Machine Learning
+* Deep Learning
 * Web development
-  * HTML
-  * CSS
-  * Java Script
-  * PHP
-  * Sql
-* Python3
-* C++
-* Linux/Unix
-* Latex
+ * HTML
+ * CSS
+ * Java Script
+ * PHP
+ * Sql
+* C and C++
+* Python
+* Java
+* R software
+* Matlab/Octave
+* Socket Programming
+* Assembly Language
+* LaTex
+* Linux
 
 ## My repository on Github:
 Currently I am working on a chess game, which will have following features-
