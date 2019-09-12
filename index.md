@@ -6,11 +6,11 @@ Introduction:
 * Machine Learning
 * Deep Learning
 * Web development
- * HTML
- * CSS
- * Java Script
- * PHP
- * Sql
+  * HTML
+  * CSS
+  * Java Script
+  * PHP
+  * Sql
 * C and C++
 * Python
 * Java
