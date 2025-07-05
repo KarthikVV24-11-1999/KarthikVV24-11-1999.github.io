@@ -1134,20 +1134,115 @@
     </section>
 
     <script>
-        // Create floating particles
-        function createParticles() {
-            const particleCount = 50;
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.section, .hero');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetSection = this.dataset.section;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    
+                    const section = document.getElementById(targetSection);
+                    if (section) {
+                        section.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '-100px 0px -100px 0px'
+            };
+            
+            const tabObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        const correspondingTab = document.querySelector(`[data-section="${sectionId}"]`);
+                        
+                        if (correspondingTab) {
+                            tabs.forEach(t => t.classList.remove('active'));
+                            correspondingTab.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                tabObserver.observe(section);
+            });
+        });
+        
+        function createFloatingElements() {
+            const floatingContainer = document.createElement('div');
+            floatingContainer.className = 'floating-elements';
+            
+            for (let i = 0; i < 3; i++) {
+                const shape = document.createElement('div');
+                shape.className = 'floating-shape';
+                floatingContainer.appendChild(shape);
+            }
+            
+            document.body.appendChild(floatingContainer);
+        }
+        
+        function createAdvancedParticles() {
+            const particleCount = 30;
+            const colors = ['rgba(120, 119, 198, 0.3)', 'rgba(255, 119, 198, 0.3)', 'rgba(120, 219, 255, 0.3)'];
+            
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.borderRadius = '50%';
                 particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
                 document.body.appendChild(particle);
             }
         }
-
-        // Smooth scrolling for navigation
+        
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            const icon = this.querySelector('.theme-icon');
+            icon.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+        
+        let mouseTrail = [];
+        document.addEventListener('mousemove', function(e) {
+            mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
+            
+            if (mouseTrail.length > 10) {
+                mouseTrail.shift();
+            }
+            
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.querySelector('.background').style.transform = 
+                `translate(${x * 20}px, ${y * 20}px) scale(${1 + (x + y) * 0.1})`;
+        });
+        
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            createAdvancedParticles();
+            
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
