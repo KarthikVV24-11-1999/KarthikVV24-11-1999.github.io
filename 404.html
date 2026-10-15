@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Venkata Karthik Vadlamudi</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121A27'/%3E%3Crect x='12' y='18' width='40' height='6' rx='3' fill='%23F2B33D'/%3E%3Crect x='20' y='29' width='22' height='6' rx='3' fill='%235CC8B4'/%3E%3Crect x='30' y='40' width='22' height='6' rx='3' fill='%239D8CFF'/%3E%3C/svg%3E">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  @font-face {
+    font-family: "Archivo"; font-style: normal; font-display: swap;
+    font-weight: 100 900; font-stretch: 62% 125%;
+    src: url("/fonts/archivo-latin-wdth-wght.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "JetBrains Mono"; font-style: normal; font-display: swap;
+    font-weight: 100 800;
+    src: url("/fonts/jetbrains-mono-latin-wght.woff2") format("woff2");
+  }
+  :root {
+    --bg: #EEF2F7; --raised: #FFFFFF; --line: #D3DBE6; --text: #132033; --text-2: #3F4D63; --text-3: #4E5C72;
+    --accent: #F2B33D; --accent-ink: #1C1406; --focus: #2F6FE0; --error: #B8352C;
+    --glow-1: rgba(109, 90, 230, 0.16); --glow-2: rgba(30, 151, 133, 0.13);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121A27; --raised: #192334; --line: #28354A; --text: #E9EDF4; --text-2: #B3BDCC; --text-3: #97A3B6;
+      --focus: #7FB0FF; --error: #F47B78;
+      --glow-1: rgba(157, 140, 255, 0.22); --glow-2: rgba(92, 200, 180, 0.14);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121A27; --raised: #192334; --line: #28354A; --text: #E9EDF4; --text-2: #B3BDCC; --text-3: #97A3B6;
+    --focus: #7FB0FF; --error: #F47B78;
+    --glow-1: rgba(157, 140, 255, 0.22); --glow-2: rgba(92, 200, 180, 0.14);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--text);
+    background:
+      radial-gradient(40% 50% at 20% 25%, var(--glow-1), transparent 70%),
+      radial-gradient(35% 45% at 85% 80%, var(--glow-2), transparent 70%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 34rem; }
+  .route {
+    display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--raised);
+    font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85rem; color: var(--text-2);
+  }
+  .route b { color: var(--error); font-weight: 500; }
+  h1 {
+    margin: 22px 0 0; font-weight: 800; font-variation-settings: "wdth" 120;
+    font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1; letter-spacing: -0.02em;
+  }
+  p { margin: 16px 0 0; font-size: 1.1rem; line-height: 1.55; color: var(--text-2); }
+  a.btn {
+    display: inline-flex; align-items: center; min-height: 44px; margin-top: 28px; padding: 10px 18px;
+    border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none;
+  }
+  a.btn:hover { background: #F6C35F; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <span class="route">GET <span id="path">this page</span> <b>404</b></span>
+  <h1>That page isn’t here</h1>
+  <p>The link may be out of date or mistyped. Everything on this site lives on the homepage: work, projects, skills and contact details.</p>
+  <a class="btn" href="/">Go to the homepage</a>
+</main>
+<script>
+  (function () {
+    var p = document.getElementById('path');
+    if (p && location.pathname) p.textContent = location.pathname.length > 40 ? location.pathname.slice(0, 40) + '…' : location.pathname;
+  })();
+</script>
+</body>
+</html>
